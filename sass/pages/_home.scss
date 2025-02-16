@@ -1,0 +1,21 @@
+@use "../abstract/variables" as *;
+
+.section-about {
+    padding: 30rem 0;
+    margin-top: -20rem;
+}
+
+.section-feature {
+    padding: 20rem 0;
+
+    background: linear-gradient(to bottom, $color-insta-orange, $color-insta-pink);
+    background-size: cover;
+    transform: skewY(-7deg);
+    & > div {
+        transform: skewY(7deg);
+    }
+}
+
+.section-product {
+    padding: 20rem 0;
+}
