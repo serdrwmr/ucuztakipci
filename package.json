@@ -1,0 +1,14 @@
+{
+    "name": "class1-advanced-css",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "sass-watch": "sass sass/main.scss css/style.css -w"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "sass": "^1.83.4"
+    }
+}

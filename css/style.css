@@ -1,0 +1,366 @@
+@charset "UTF-8";
+/* #6A7F47 
+rgba(126, 213, 111, 0.4),
+rgba(40, 180, 133, 0.4)  denemelik tints and shads */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6 rem;
+  line-height: 1.7;
+  font-weight: 400;
+  color: #777;
+}
+
+.main {
+  background-color: #f7f7f7;
+}
+
+.heading-primary {
+  color: white;
+}
+.heading-primary-main {
+  text-transform: uppercase;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  /* animation-delay ne kadar gecikmeli*/
+  /* animation-iteration-count  kac defa*/
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 45px;
+}
+.heading-primary-sub {
+  animation: moveInRight 1s ease-out;
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 1.5rem;
+  margin-bottom: 6rem;
+}
+
+.heading-secondery {
+  font-size: 5.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  background-image: linear-gradient(to right, #E1306C, #833AB4);
+  transition: all 0.3s ease;
+  color: transparent;
+  background-clip: text;
+  outline-offset: 0.5rem;
+  border-radius: 4px;
+}
+.heading-secondery:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+}
+
+.heading-tertiary {
+  color: #833AB4;
+  font-size: 3.6rem;
+}
+
+.paragraph {
+  font-size: 1.8rem;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.u-text-center {
+  text-align: center;
+}
+
+.u-mb-l {
+  margin-bottom: 8rem;
+}
+
+.u-mb-m {
+  margin-bottom: 4rem;
+}
+
+.u-mb-s {
+  margin-bottom: 2rem;
+}
+
+.btn-custom:link, .btn-custom:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+  animation: moveUp 1s ease-out 0.5s;
+  animation-fill-mode: backwards;
+  position: relative;
+}
+.btn-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.4);
+}
+.btn-custom:hover::after {
+  opacity: 0;
+  transform: scale(2);
+}
+.btn-custom:active {
+  transform: translateY(-1px);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
+}
+.btn-custom-white {
+  background: white;
+  color: #777;
+}
+.btn-custom-white::after {
+  background-color: white;
+}
+.btn-custom::after {
+  content: "";
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.composition {
+  position: relative;
+}
+.composition-photo {
+  border-radius: 20px;
+  position: absolute;
+  width: 60%;
+  outline-offset: 1rem;
+  transition: all 0.4s;
+}
+.composition-photo-1 {
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.composition-photo-2 {
+  right: 0;
+  top: 8rem;
+  z-index: 2;
+}
+.composition-photo-3 {
+  left: 10rem;
+  top: 20rem;
+  z-index: 3;
+}
+.composition-photo:hover {
+  outline: 1.5rem solid #4caf50;
+  z-index: 10;
+  transform: scale(1.2);
+}
+
+.feature-box {
+  text-align: center;
+  padding: 2.5rem;
+  background-color: white;
+  transition: all 0.4s ease;
+  border-radius: 5px;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
+}
+.feature-box:hover {
+  transform: scale(1.2) translateY(2rem);
+}
+.feature-box-icon {
+  height: 10rem;
+  margin-bottom: 1rem;
+}
+.feature-box-text {
+  font-size: 1.8rem;
+}
+
+.card {
+  height: 80rem;
+  padding: none;
+  position: relative;
+  perspective: 150rem;
+  background-color: #f7f7f7;
+  border: none;
+}
+.card-side {
+  overflow: hidden;
+  border-radius: 10px; /* Köşeleri yuvarlar */
+  box-shadow: 0 1px 4px 4px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  height: 70rem;
+  width: 100%;
+  backface-visibility: hidden;
+  transition: all 2s ease;
+}
+.card-side-front {
+  background: linear-gradient(to bottom, #833AB4, #E1306C);
+}
+.card-side-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(to bottom, #833AB4, #E1306C);
+}
+.card:hover .card-side-front {
+  transform: rotateY(-180deg);
+}
+.card:hover .card-side-back {
+  transform: rotateY(0deg);
+}
+.card-heading {
+  margin: 0; /* Dış boşluğu sıfırla */
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+  background-color: #ffc107;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+.card-picture {
+  background-size: cover;
+  background-position: center;
+  width: 100%; /* Kartın genişliğine sığdır */
+  height: 45rem; /* Sabit bir yükseklik belirle */
+  object-fit: cover;
+}
+.card-picture-1 {
+  background-image: url("../../assets/images/+ 50 Takipçi.png");
+}
+.card-picture-2 {
+  background-image: url("../../assets/images/+ 100 Takipçi.png");
+}
+.card-picture-3 {
+  background-image: url("../../assets/images/+ 200 Takipçi.png");
+}
+
+ul.card-list {
+  list-style-type: none; /* Liste işaretlerini kaldır */
+  padding: 1rem; /* Padding'i sıfırla */
+  margin: 0; /* Margin'i sıfırla */
+  height: 100%; /* ul'nin yüksekliğini tam olarak kullan */
+}
+ul.card-list li {
+  text-align: center; /* Metni ortala */
+  margin: 0;
+  padding: 1rem; /* li elemanları arasına boşluk ekle */
+  font-size: 1.6rem; /* Yazı boyutunu ayarla */
+  color: #000; /* Yazı rengini ayarla */
+}
+ul.card-list a {
+  text-align: center; /* Metni ortala */
+  text-decoration: none; /* Linklerin alt çizgisini kaldır */
+  color: inherit; /* Link rengini miras al */
+  font-size: 1.6rem; /* Yazı boyutunu ayarla */
+}
+
+ul.card-list-back {
+  list-style-type: none; /* Liste işaretlerini kaldır */
+  padding: 2rem; /* Padding'i sıfırla */
+  margin: 0; /* Margin'i sıfırla */
+  height: 100%; /* ul'nin yüksekliğini tam olarak kullan */
+}
+ul.card-list-back li {
+  color: #000;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; /*
+margin: auto;
+text-align: center; /* Metni ortala */
+  margin: 0;
+  padding: 5px; /* li elemanları arasına boşluk ekle */
+  font-size: 3rem; /* Yazı boyutunu ayarla */
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  background: linear-gradient(to bottom, #f58529, #dd2a7b);
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+  background-position: 0 13%;
+}
+
+.logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.logo {
+  height: 10rem;
+  width: auto;
+  cursor: pointer;
+}
+
+.text-box {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.section-about {
+  padding: 30rem 0;
+  margin-top: -20rem;
+}
+
+.section-feature {
+  padding: 20rem 0;
+  background: linear-gradient(to bottom, #f58529, #dd2a7b);
+  background-size: cover;
+  transform: skewY(-7deg);
+}
+.section-feature > div {
+  transform: skewY(7deg);
+}
+
+.section-product {
+  padding: 20rem 0;
+}
+
+/*# sourceMappingURL=style.css.map */
