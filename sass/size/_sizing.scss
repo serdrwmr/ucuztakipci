@@ -1,0 +1,64 @@
+// Temel stiller
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+// Mobil cihazlar için stil
+@media only screen and (max-width: 767px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    // Diğer mobil stilleri buraya ekleyebilirsiniz
+}
+
+// Tablet cihazlar için stil
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    // Diğer tablet stilleri buraya ekleyebilirsiniz
+}
+
+// Büyük ekranlar için stil
+@media only screen and (min-width: 1025px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    // Diğer büyük ekran stilleri buraya ekleyebilirsiniz
+}
