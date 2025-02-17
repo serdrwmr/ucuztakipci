@@ -12,8 +12,8 @@ body {
     padding: 20px;
 }
 
-// Mobil cihazlar için stil
-@media only screen and (max-width: 767px) {
+// 430x932 piksel boyutuna özel stil
+@media only screen and (width: 430px) and (height: 932px) {
     .container {
         padding: 10px;
     }
@@ -26,10 +26,24 @@ body {
         font-size: 14px;
     }
 
-    // Diğer mobil stilleri buraya ekleyebilirsiniz
+    // Diğer özel stilleri buraya ekleyebilirsiniz
 }
 
-// Tablet cihazlar için stil
+// Diğer ekran boyutları için stiller
+@media only screen and (max-width: 767px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .container {
         padding: 15px;
@@ -42,11 +56,8 @@ body {
     p {
         font-size: 16px;
     }
-
-    // Diğer tablet stilleri buraya ekleyebilirsiniz
 }
 
-// Büyük ekranlar için stil
 @media only screen and (min-width: 1025px) {
     .container {
         padding: 20px;
@@ -59,6 +70,4 @@ body {
     p {
         font-size: 18px;
     }
-
-    // Diğer büyük ekran stilleri buraya ekleyebilirsiniz
 }
