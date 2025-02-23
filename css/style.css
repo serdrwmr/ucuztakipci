@@ -344,6 +344,23 @@ text-align: center; /* Metni ortala */
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden; /* Sağa kaymayı önler */
+  }
+  h1, h2, h3 {
+    font-size: 18px; /* Mobilde başlıkları küçült */
+    text-align: center; /* Başlıkları ortala */
+  }
+  img {
+    max-width: 100%; /* Görsellerin taşmasını önler */
+    height: auto;
+  }
+  .button {
+    font-size: 14px; /* Butonları küçült */
+    padding: 10px 15px;
+  }
+}
 .section-about {
   padding: 30rem 0;
   margin-top: -20rem;
